@@ -1,0 +1,67 @@
+### Agregar una nueva franquicia
+POST http://localhost:8080/api/franquicias
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nombre": "Franquicia 1",
+  "sucursales": []
+}
+
+### Obtener todas las franquicias
+GET http://localhost:8080/api/franquicias
+Accept: application/json
+Content-Type: application/json
+
+### Actualizar el nombre de una franquicia
+PUT http://localhost:8080/api/franquicias/674645fa48ab04375e654649
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nombre": "Nuevo Nombre Franquicia"
+}
+
+
+### Agregar una nueva sucursal a una franquicia
+POST http://localhost:8080/api/franquicias/674645fa48ab04375e654649/sucursales
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nombre": "Sucursal A",
+  "productos": []
+}
+
+### Agregar un nuevo producto a una sucursal
+POST http://localhost:8080/api/franquicias/123456/sucursales/654321/productos
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nombre": "Producto 1",
+  "stock": 50
+}
+
+### Eliminar un producto de una sucursal
+DELETE http://localhost:8080/api/franquicias/123456/sucursales/654321/productos/78910
+Accept: application/json
+
+
+###Modificar el stock de un producto
+PATCH http://localhost:8080/api/franquicias/123456/sucursales/654321/productos/78910
+Accept: application/json
+Content-Type: application/json
+
+{
+  "stock": 100
+}
+
+### Actualizar el nombre de un producto
+PATCH http://localhost:8080/api/franquicias/123456/sucursales/654321/productos/78910
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nombre": "Nuevo Nombre Producto"
+}
